@@ -764,13 +764,12 @@
         }
 
         @media (max-width: 768px) {
-            /* Timeline Vertical */
+            /* Timeline Cards no Mobile */
             .timeline-wrapper {
                 display: flex;
                 flex-direction: column;
-                gap: 1.5rem;
+                gap: 1rem;
                 min-height: auto;
-                align-items: stretch;
             }
 
             .timeline-line {
@@ -778,61 +777,43 @@
             }
 
             .timeline-item {
-                display: grid;
-                grid-template-columns: 70px 16px 1fr;
-                gap: 1rem;
-                align-items: flex-start;
+                display: block;
                 position: relative;
                 min-height: auto;
                 width: 100%;
+                padding: 1rem;
+                background: #f8f9fa;
+                border-left: 4px solid var(--dark-blue);
+                border-radius: 4px;
             }
 
             .timeline-year {
-                font-size: 0.75rem;
+                font-size: 0.85rem;
                 font-weight: 700;
                 color: var(--dark-blue);
-                text-align: right;
-                grid-column: 1;
-                grid-row: 1;
                 position: static;
                 transform: none;
                 width: 100%;
                 top: auto;
                 left: auto;
-                margin: 0;
+                margin: 0 0 0.5rem 0;
             }
 
             .timeline-company {
-                font-size: 0.65rem;
+                font-size: 0.75rem;
                 font-weight: 600;
-                grid-column: 1;
-                grid-row: 2;
                 position: static;
-                text-align: right;
                 top: auto;
                 left: auto;
-                margin: 0;
-                margin-top: 0.3rem;
+                margin: 0 0 0.8rem 0;
+                color: var(--dark-blue);
             }
 
             .timeline-dot {
-                grid-column: 2;
-                grid-row: 1 / 3;
-                position: static;
-                transform: none;
-                width: 12px;
-                height: 12px;
-                background: var(--dark-blue);
-                border: 2px solid white;
-                box-shadow: 0 0 0 2px var(--dark-blue);
-                border-radius: 0;
-                top: auto;
-                left: auto;
+                display: none;
             }
 
             .timeline-info {
-                grid-column: 3;
-                grid-row: 1 / 3;
                 position: static;
                 transform: none;
                 left: auto;
@@ -841,8 +822,8 @@
                 opacity: 1;
                 visibility: visible;
                 pointer-events: auto;
-                font-size: 0.7rem;
-                padding: 0.6rem 0.8rem;
+                font-size: 0.75rem;
+                padding: 0;
                 max-height: none;
                 overflow: visible;
                 box-shadow: none;
@@ -852,9 +833,7 @@
             }
 
             .timeline-item:hover .timeline-dot {
-                width: 12px;
-                height: 12px;
-                box-shadow: 0 0 0 2px var(--dark-blue);
+                display: none;
             }
 
             .timeline-mobile-warning {
