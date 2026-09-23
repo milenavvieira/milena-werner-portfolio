@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milena Werner | Senior Product Manager</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --dark-blue: #1a3a52;
+            --light-bg: #f9f9f9;
+            --text-dark: #2c2c2c;
+            --text-light: #666;
+            --border: #e5e5e5;
+            --accent: var(--dark-blue);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: white;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Sora', sans-serif;
+            font-weight: 700;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: white;
+            border-bottom: 1px solid var(--border);
+            padding: 1.2rem 2rem;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            text-decoration: none;
+            font-family: 'Sora', sans-serif;
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        .lang-toggle {
+            background: none;
+            border: 1px solid var(--border);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+        }
+
+        .lang-toggle:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            max-width: 1200px;
+            margin: 4rem auto 0;
+            padding: 3rem 2rem;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 1.8rem;
+            line-height: 1.3;
+            margin-bottom: 1.2rem;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .hero-tagline {
+            font-size: 1.4rem;
+            line-height: 1.5;
+            margin-bottom: 2rem;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .hero-content p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 1.2rem;
+            line-height: 1.7;
+        }
+
+        .hero-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+            transition: opacity 0.3s ease;
+        }
+
+        .contact-item:hover {
+            opacity: 0.8;
+        }
+
+        .contact-label {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .contact-value {
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image img {
+            width: 240px;
+            height: 240px;
+            border-radius: 50%;
+            object-fit: cover;
+            animation: fadeInUp 0.8s ease-out;
+            border: 3px solid var(--border);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Divider */
+        .divider {
+            height: 1px;
+            background: var(--border);
+            max-width: 1200px;
+            margin: 3rem auto;
+        }
+
+        .divider-cases {
+            margin: 3rem auto;
+        }
+
+        .divider-articles {
+            margin: 3rem auto;
+        }
+
+        .divider-work {
+            margin: 3rem auto;
+        }
+
+        .divider-timeline {
+            margin: 3rem auto;
+        }
+
+        .divider-cv {
+            margin: 8rem auto 3rem;
+        }
+
+        /* Main Sections */
+        .section {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 2rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 2.5rem;
+            color: var(--text-dark);
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--accent);
+        }
+
+        /* Articles */
+        .articles-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .article-card {
+            background: var(--light-bg);
+            padding: 1.8rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .article-card:hover {
+            background: #f0f0f0;
+            transform: translateY(-4px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .article-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .article-card h3 {
+            font-size: 1.05rem;
+            margin: 0;
+            color: var(--text-dark);
+            flex: 1;
+        }
+
+        .article-toggle {
+            color: var(--accent);
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+            margin-top: 0.2rem;
+        }
+
+        .article.expanded .article-toggle {
+            transform: rotate(180deg);
+        }
+
+        .article-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .article.expanded .article-content {
+            max-height: 500px;
+        }
+
+        .article-full {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* Cases */
+        .cases-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .case {
+            background: var(--light-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+            transition: all 0.3s ease;
+        }
+
+        .case:hover {
+            background: #f0f0f0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .case h3 {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            margin: 0 0 1.5rem 0;
+        }
+
+        .case-detail {
+            margin-bottom: 1.5rem;
+        }
+
+        .case-detail:last-child {
+            margin-bottom: 0;
+        }
+
+        .case-detail strong {
+            color: var(--text-dark);
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .case-detail p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Work Style */
+        .work-style {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .work-item {
+            background: var(--light-bg);
+            padding: 1.8rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+        }
+
+        .work-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-dark);
+        }
+
+        .work-item p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        .work-item strong {
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        /* CV Section */
+        .cv-downloads {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .cv-card {
+            background: var(--light-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 2px solid var(--border);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .cv-card:hover {
+            border-color: var(--accent);
+            background: #f0f0f0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .cv-card h3 {
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            font-size: 1.1rem;
+        }
+
+        .cv-btn {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .cv-btn:hover {
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            color: var(--text-light);
+            border-top: 1px solid var(--border);
+            margin-top: 5rem;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        /* Language Toggle */
+        .pt-only {
+            display: block;
+        }
+
+        .en-only {
+            display: none;
+        }
+
+        body.en .pt-only {
+            display: none;
+        }
+
+        body.en .en-only {
+            display: block;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cases-list {
+                grid-template-columns: 1fr;
+            }
+
+            .work-style {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero-image {
+                order: -1;
+            }
+
+            .hero-content h1 {
+                font-size: 1.6rem;
+            }
+
+            .hero-tagline {
+                font-size: 1.2rem;
+            }
+
+            .hero-contact {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .hero-image img {
+                width: 200px;
+                height: 200px;
+            }
+
+            .cv-downloads {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Timeline Styles */
+        .timeline-container {
+            position: relative;
+            padding: 1rem 0;
+            overflow: visible;
+            width: 100%;
+        }
+
+        .timeline-wrapper {
+            position: relative;
+            padding: 3rem 0;
+            min-height: 260px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 0;
+            align-items: center;
+        }
+
+        .timeline-line {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--dark-blue);
+            z-index: 1;
+            transform: translateY(-50%);
+        }
+
+        .timeline-line::after {
+            content: '▶';
+            position: absolute;
+            right: -6px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.8rem;
+            color: var(--dark-blue);
+            font-weight: 900;
+        }
+
+        .timeline-item {
+            position: relative;
+            text-align: center;
+            cursor: pointer;
+            padding: 0 0.5rem;
+            z-index: 2;
+            height: 100%;
+        }
+
+        .timeline-item .timeline-year {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+        }
+
+        .timeline-item .timeline-company {
+            position: absolute;
+            top: 1.8rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            width: 14px;
+            height: 14px;
+            background: var(--dark-blue);
+            border: 2px solid white;
+            box-shadow: 0 0 0 2px var(--dark-blue);
+            transition: all 0.3s ease;
+            z-index: 2;
+        }
+
+        .timeline-item:hover .timeline-dot {
+            width: 22px;
+            height: 22px;
+            box-shadow: 0 0 0 3px var(--dark-blue);
+        }
+
+        .timeline-year {
+            font-size: 0.7rem;
+            color: var(--dark-blue);
+            font-weight: 700;
+            margin: 0;
+            line-height: 1.1;
+        }
+
+        .timeline-company {
+            font-size: 0.65rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin: 0;
+            line-height: 1.1;
+        }
+
+        .timeline-info {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 0.8rem;
+            width: 300px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            visibility: hidden;
+            z-index: 100;
+            top: 7rem;
+            font-size: 0.8rem;
+        }
+
+        .timeline-item:hover .timeline-info:not(.fixed) {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        .timeline-info.fixed {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        .timeline-title {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--dark-blue);
+            margin: 0 0 0.3rem 0;
+        }
+
+        .timeline-period {
+            font-size: 0.7rem;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin: 0 0 0.8rem 0;
+        }
+
+        .timeline-details {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .timeline-details li {
+            margin-bottom: 0.4rem;
+        }
+
+        .timeline-note {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: var(--light-bg);
+            border-radius: 8px;
+            border-left: 4px solid var(--dark-blue);
+        }
+
+        .timeline-note p {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        .timeline-note strong {
+            color: var(--dark-blue);
+        }
+
+        .timeline-mobile-warning {
+            display: none;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #fff3cd;
+            border-radius: 8px;
+            border-left: 4px solid #ff9800;
+        }
+
+        .timeline-mobile-warning p {
+            font-size: 0.85rem;
+            color: #856404;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-wrapper {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1rem;
+                min-height: 240px;
+            }
+
+            .timeline-line {
+                top: 50%;
+            }
+
+            .timeline-dot {
+                width: 10px;
+                height: 10px;
+            }
+
+            .timeline-item:hover .timeline-dot {
+                width: 16px;
+                height: 16px;
+            }
+
+            .timeline-year {
+                font-size: 0.6rem;
+            }
+
+            .timeline-company {
+                font-size: 0.55rem;
+            }
+
+            .timeline-info {
+                width: 260px;
+                font-size: 0.7rem;
+                padding: 0.6rem;
+                top: 5rem;
+            }
+
+            .timeline-line::after {
+                font-size: 0.7rem;
+                right: -5px;
+                font-weight: 900;
+            }
+
+            .timeline-company {
+                top: 1.6rem;
+            }
+
+            .timeline-info {
+                top: 6rem;
+            }
+
+            .timeline-mobile-warning {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body class="pt">
+
+    <header>
+        <div class="header-content">
+            <a href="#" class="logo">Milena Vota Vieira Werner</a>
+            <nav>
+                <a href="#about" class="pt-only">Sobre</a>
+                <a href="#about" class="en-only">About</a>
+                <a href="#cases" class="pt-only">Projetos</a>
+                <a href="#cases" class="en-only">Projects</a>
+                <a href="#articles" class="pt-only">Artigos</a>
+                <a href="#articles" class="en-only">Articles</a>
+                <a href="#work" class="pt-only">Como trabalho</a>
+                <a href="#work" class="en-only">How I work</a>
+                <a href="#timeline" class="pt-only">Trajetória</a>
+                <a href="#timeline" class="en-only">Career</a>
+                <a href="#cv" class="pt-only">Currículo</a>
+                <a href="#cv" class="en-only">Resume</a>
+                <button class="lang-toggle" onclick="toggleLanguage()">EN / PT</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="about">
+        <div class="hero-content">
+            <p style="font-size: 0.85rem; color: #999; text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 1rem 0; font-weight: 600;" class="pt-only">Senior PM • Fintech & Cartões</p>
+            <p style="font-size: 0.85rem; color: #999; text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 1rem 0; font-weight: 600;" class="en-only">Senior PM • Fintech & Cards</p>
+            
+            <h1 class="pt-only">Oi, eu sou a Milena</h1>
+            <h1 class="en-only">Hi, I'm Milena</h1>
+            
+            <div class="hero-tagline pt-only">Facilito produtos complexos ao conectar regulação, negócio, operações e tecnologia.</div>
+            <div class="hero-tagline en-only">I facilitate complex products by connecting regulation, business, operations and technology.</div>
+            
+            <p class="pt-only">Senior Product Manager com 12+ anos de experiência em cartões de crédito, pagamentos, seguros, empréstimos e Open Finance em grandes bancos e fintechs de varejo. Histórico prático na liderança de projetos digitais e gestão de produtos, desde a pesquisa com clientes e definição de estratégia até o lançamento e operações do dia a dia. Especializada em transformar regras do Banco Central, demandas de fornecedores e sistemas bancários em produtos simples, reduzindo custos operacionais.</p>
+            <p class="en-only">Senior Product Manager with 12+ years of experience in credit cards, payments, loans, and open finance within major financial institutions and retail fintechs. Proven track record leading digital transformation projects and guiding teams through the full product lifecycle, from user research and strategy to launch and daily operations. Skilled in turning regulatory requirements, vendor demands, and core banking systems into simple financial products while reducing operational costs.</p>
+
+            <div class="hero-contact">
+                <div class="contact-item">
+                    <span class="contact-label">Email:</span>
+                    <span class="contact-value">milenavvieira@gmail.com</span>
+                </div>
+                <a href="https://linkedin.com/in/milena-vota-vieira-werner" class="contact-item pt-only" target="_blank">
+                    <span class="contact-label">LinkedIn:</span>
+                    <span class="contact-value">linkedin.com/in/milena-vota-vieira-werner</span>
+                </a>
+                <a href="https://www.linkedin.com/in/milena-vota-vieira-werner/?locale=en-US" class="contact-item en-only" target="_blank">
+                    <span class="contact-label">LinkedIn:</span>
+                    <span class="contact-value">linkedin.com/in/milena-vota-vieira-werner</span>
+                </a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="milena-photo.jpg" alt="Milena Werner">
+        </div>
+    </section>
+
+    <div class="divider divider-cases"></div>
+
+    <!-- Cases Section (PT) -->
+    <section id="cases" class="section pt-only">
+        <h2 class="section-title">Principais projetos</h2>
+        
+        <div class="cases-list">
+            <div class="case">
+                <h3>Cartão Instantâneo</h3>
+                
+                <div class="case-detail">
+                    <strong>O problema</strong>
+                    <p>Cliente solicitava cartão em loja, mas recebia em casa em 10-15 dias. Perdia a janela de oportunidade do momento da compra, entregas falhavam, não transacionavam.</p>
+                </div>
+
+                <div class="case-detail">
+                    <strong>O que fiz</strong>
+                    <p>Liderei de ponta a ponta: negociação com processadora, fabricantes, times de tech, redesenho do onboarding, validação fraude/compliance, fluxo com time de crédito, treinamento comercial, piloto em 30 lojas, rollout para +500 lojas.</p>
+                </div>
+
+                <div class="case-detail">
+                    <strong>Impacto</strong>
+                    <p>+30% volume de aprovação, redução de R$ 4M/mês em custos de entrega, cliente sai com cartão pronto para usar.</p>
+                </div>
+            </div>
+
+            <div class="case">
+                <h3>Fatura 100% Digital</h3>
+                
+                <div class="case-detail">
+                    <strong>O problema</strong>
+                    <p>Fatura física exigia 2 gráficas, custo alto de impressão e entrega, questão de sustentabilidade. Recebíamos acionamentos judiciais por falta de clareza nas cobranças.</p>
+                </div>
+
+                <div class="case-detail">
+                    <strong>O que fiz</strong>
+                    <p>Validei com Jurídico que não era obrigatório físico. Estudei com UX, criei grupos teste, melhorei canais (WhatsApp, loja, app), apresentei em diretoria. Montei força-tarefa com juridico, compliance, atendimento, tecnologia para estruturar o processo de pesquisa e validação.</p>
+                </div>
+
+                <div class="case-detail">
+                    <strong>Impacto</strong>
+                    <p>+400k clientes migrados, redução de R$ 500k/mês, ciclo de fatura reduzido de 16 para 7 dias, acionamentos judiciais reduzidos em R$ 300k/mês.</p>
+                </div>
+            </div>
+
+            <div class="case">
+                <h3>Cartão Sustentável (Ecocard)</h3>
+                
+                <div class="case-detail">
+                    <strong>A oportunidade</strong>
+                    <p>Nenhum varejista grande tinha ecocard. Tema estava em alta. Tema de sustentabilidade na Renner ainda não tinha meta formal, mas sabia que chegaria rápido.</p>
+                </div>
+
+                <div class="case-detail">
+                    <strong>O que fiz</strong>
+                    <p>Pesquisei mercado, falei com embossadora, conversei com lojas com selo sustentável. Comecei com 20% das emissões nessas lojas. Parametrizei tudo desde o início para escala futura, deixando o produto modular e pronto para crescer.</p>
+                </div>
+
+                <div class="case-detail">
+                    <strong>Impacto</strong>
+                    <p>Um ano depois, quando metas de sustentabilidade chegaram, escalei de 20% para 100% ajustando apenas um parâmetro. Sem desenvolvimento novo. Incluído nas metas oficiais de sustentabilidade da Renner.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cases Section (EN) -->
+    <section id="cases" class="section en-only">
+        <h2 class="section-title">Key Projects</h2>
+        
+        <div class="cases-list">
+            <div class="case">
+                <h3>Instant Card</h3>
+                
+                <div class="case-detail">
+                    <strong>The problem</strong>
+                    <p>Customer requested card in store but received at home in 10-15 days. Lost the opportunity window from purchase, deliveries failed, they didn't transact.</p>
+                </div>
+
+                <div class="case-detail">
+                    <strong>What I did</strong>
+                    <p>Led end-to-end: negotiation with processor, manufacturers, tech teams, onboarding redesign, fraud/compliance validation, credit team flow, commercial training, pilot in 30 stores, rollout to +500 stores.</p>
+                </div>
+
+                <div class="case-detail">
+                    <strong>Impact</strong>
+                    <p>+30% approval volume, R$ 4M/month cost reduction, customer leaves with ready-to-use card.</p>
+                </div>
+            </div>
+
+            <div class="case">
+                <h3>100% Digital Statements</h3>
+                
+                <div class="case-detail">
+                    <strong>The problem</strong>
+                    <p>Physical invoices required 2 printing houses, high printing and delivery costs, sustainability concerns. We received lawsuits over unclear charges.</p>
+                </div>
+
+                <div class="case-detail">
+                    <strong>What I did</strong>
+                    <p>Validated with Legal that physical wasn't mandatory. Studied with UX, created test groups, improved channels (WhatsApp, store, app), presented to board. Built task force with legal, compliance, support, tech to structure the research process.</p>
+                </div>
+
+                <div class="case-detail">
+                    <strong>Impact</strong>
+                    <p>+400k customers migrated, R$ 500k/month reduction, invoice cycle reduced from 16 to 7 days, lawsuits reduced by R$ 300k/month.</p>
+                </div>
+            </div>
+
+            <div class="case">
+                <h3>Sustainable Card (Ecocard)</h3>
+                
+                <div class="case-detail">
+                    <strong>The opportunity</strong>
+                    <p>No major retailer had ecocard. Theme was rising. Renner's sustainability agenda had no formal target yet, but I knew it would come.</p>
+                </div>
+
+                <div class="case-detail">
+                    <strong>What I did</strong>
+                    <p>Researched market, talked to card embosser, spoke with stores with sustainability seals. Started with 20% of emissions in those stores. Parametrized everything from the start for future scale, structuring a modular product ready to grow.</p>
+                </div>
+
+                <div class="case-detail">
+                    <strong>Impact</strong>
+                    <p>One year later, when sustainability targets arrived, I scaled from 20% to 100% by adjusting one parameter. No new development. Included in Renner's official sustainability goals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider divider-articles"></div>
+
+    <!-- Articles Section (PT) -->
+    <section id="articles" class="section pt-only">
+        <h2 class="section-title">Artigos</h2>
+        <div class="articles-grid">
+            <div class="article-card article">
+                <div class="article-header">
+                    <h3>Como descoberta rigorosa salva o seu projeto</h3>
+                    <span class="article-toggle">▼</span>
+                </div>
+                <div class="article-content">
+                    <div class="article-full">Quando sugeri digitalizar 100% das faturas da Renner, a resposta não foi imediata. Tinha custo, tinha sustentabilidade, tinha lógica. Mas tinha um risco: o cliente não ia pagar a fatura porque não a via? Ia cair fora do controle dele?<br><br>Tínhamos uma base menor com fatura física, mas exigia 2 gráficas, impressão, entrega. O custo era alto, mas tirar sem validar era um salto no escuro.<br><br>Não corri. Fiz um estudo de verdade: Conversa com Jurídico/Compliance (era obrigatório?), Pesquisa com UX (por que o cliente preferia?), Melhoria de canais alternativos (WhatsApp, app, loja), Grupo teste (validamos impacto em pagamento e acionamentos).<br><br>A descoberta rigorosa não mata a inovação. Ela a torna inevitável. Quando você tem dados, quando você validou, quando você conhece o risco real, a decisão vira certa, não aposta. A rigidez te dá liberdade.</div>
+                </div>
+            </div>
+
+            <div class="article-card article">
+                <div class="article-header">
+                    <h3>Quando compliance e negócio não são inimigos</h3>
+                    <span class="article-toggle">▼</span>
+                </div>
+                <div class="article-content">
+                    <div class="article-full">A Resolução BCB nº 365/2023 exigiu que nossas faturas fossem mais transparentes. Podia ser um problema. Mas era uma oportunidade.<br><br>Enquanto revisávamos para ficar em conformidade, descobrimos algo: estávamos recebendo acionamentos judiciais justamente pelos temas que a regulação exigia que esclarecessemos. Clientes reclamando de falta de clareza, cobranças confusas, informações incompletas.<br><br>Compliance não estava indo contra o negócio. Estava apontando exatamente para onde doia. Montei uma força tarefa: jurídico, ações civis, compliance, marketing, tecnologia, ouvidoria e central de atendimento sentados juntos. Não era "cumpra a lei". Era "vamos resolver o problema que o cliente está trazendo para o tribunal".<br><br>O melhor produto não é o que respeita as regras. É o que descobre que as regras estão apontando para onde o cliente sofre. Compliance é um mapa, não uma barreira.</div>
+                </div>
+            </div>
+
+            <div class="article-card article">
+                <div class="article-header">
+                    <h3>Inovação antecipada: quando o produto não tem demanda oficial ainda</h3>
+                    <span class="article-toggle">▼</span>
+                </div>
+                <div class="article-content">
+                    <div class="article-full">Você precisa de uma meta formal para inovar? A resposta foi silêncio.<br><br>Na época, a Renner não tinha meta de sustentabilidade. Mas o tema estava em alta e eu sabia que quando chegasse, chegaria rápido. E mais: descobri que nenhum varejista grande tinha um ecocard. Era uma oportunidade de estar primeiro.<br><br>Conversei com as lojas que já tinham pegada sustentável e elas queriam. Pesquisei o mercado, entendi como fazer, falei com a embossadora de cartões. Não era um projeto para 2025 ou 2026. Era algo para começar agora, em praças onde fazia sentido.<br><br>Comecei em 20% das emissões nas lojas que já tinham selo sustentável. Mas aqui está o detalhe que mudou tudo: quando arquitetei o produto, deixei pronto para escalar. Parametrizei tudo.<br><br>Um ano depois chegam os comitês de sustentabilidade da Renner com metas. Eu só precisei ajustar um parâmetro. Quem foi primeiro vence duas vezes. Quem constrói para escalar desde o início não corre depois. Enquanto outros improvisam, você executa.</div>
+                </div>
+            </div>
+
+            <div class="article-card article">
+                <div class="article-header">
+                    <h3>Facilitar é mais que gerenciar: como entreguei o Cartão Instantâneo</h3>
+                    <span class="article-toggle">▼</span>
+                </div>
+                <div class="article-content">
+                    <div class="article-full">Quando comecei o projeto do Cartão Instantâneo, tinha processadora, fabricante, engenharia, compliance, crédito, comercial e diretoria todos querendo coisas diferentes ao mesmo tempo. E tinham pressa. Muita pressa.<br><br>Inovação disruptiva sempre tem um custo político. Custa dinheiro esperar, custa oportunidade não sair logo, custa chance do concorrente chegar primeiro. Mas o projeto era complexo, exigia testes rigorosos.<br><br>Como você entrega rápido sem cair na armadilha de rápido porém quebrado?<br><br>Não corri. Mas também não deixei ninguém esperando no escuro. Comitês. Muitos comitês. Semana sim, semana não, todos os stakeholders na mesma sala. Cada um via o que o outro estava fazendo, tinha clareza de onde estávamos e por quê. Fiquei próxima das equipes. Jira aberto, testes acontecendo, problemas sendo resolvidos em tempo real.<br><br>Começamos com um piloto em 30 lojas. Aprendemos, ajustamos, escalamos. Até chegar em 500 lojas. Sem sustos. Porque facilitação não é dizer sim para tudo. É dizer verdades rápido e construir junto.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Articles Section (EN) -->
+    <section id="articles" class="section en-only">
+        <h2 class="section-title">Articles</h2>
+        <div class="articles-grid">
+            <div class="article-card article">
+                <div class="article-header">
+                    <h3>How rigorous discovery saves your project</h3>
+                    <span class="article-toggle">▼</span>
+                </div>
+                <div class="article-content">
+                    <div class="article-full">When I suggested digitizing 100% of Renner's invoices, the response wasn't immediate. There was cost, sustainability, logic. But there was a risk: would the customer not pay because they couldn't see it? Would it fall out of their control?<br><br>We had a smaller base with physical invoices, but it required 2 printing houses, printing, delivery. The cost was high, but removing it without validating was a leap in the dark.<br><br>I didn't rush. I did a real study: Conversation with Legal/Compliance (was it mandatory?), Research with UX (why did customers prefer?), Improvement of alternative channels (WhatsApp, app, store), Test group (we validated impact on payments and claims).<br><br>Rigorous discovery doesn't kill innovation. It makes it inevitable. When you have data, when you've validated, when you know the real risk, the decision becomes certain, not a gamble. Rigor gives you freedom.</div>
+                </div>
+            </div>
+
+            <div class="article-card article">
+                <div class="article-header">
+                    <h3>When compliance and business aren't enemies</h3>
+                    <span class="article-toggle">▼</span>
+                </div>
+                <div class="article-content">
+                    <div class="article-full">BCB Resolution 365/2023 required our invoices to be more transparent. It could have been a problem. But it was an opportunity.<br><br>While reviewing for compliance, we discovered something: we were receiving lawsuits on exactly the topics the regulation required us to clarify. Customers complaining about lack of clarity, confusing charges, incomplete information.<br><br>Compliance wasn't going against business. It was pointing exactly where it hurt. I built a task force: legal, civil cases, compliance, marketing, technology, ombudsman, and customer service all in one room. It wasn't "comply with the law". It was "let's solve the problem the customer is taking to court".<br><br>The best product isn't the one that respects the rules. It's the one that discovers the rules point to where your customer suffers. Compliance is a map, not a barrier.</div>
+                </div>
+            </div>
+
+            <div class="article-card article">
+                <div class="article-header">
+                    <h3>Anticipatory innovation: when the product has no official demand yet</h3>
+                    <span class="article-toggle">▼</span>
+                </div>
+                <div class="article-content">
+                    <div class="article-full">Do you need a formal target to innovate? The answer was silence.<br><br>At the time, Renner had no sustainability target. But the theme was rising and I knew when it came, it would come fast. And more: I discovered no major retailer had an ecocard. It was an opportunity to be first.<br><br>I talked to stores that already had a sustainable footprint and they wanted it. I researched the market, understood how to do it, talked to the card embosser. It wasn't a project for 2025 or 2026. It was something to start now, in places that made sense.<br><br>I started at 20% of emissions in stores that already had sustainability seals. But here's the detail that changed everything: when I architected the product, I left it ready to scale. I parametrized everything.<br><br>A year later the sustainability committees at Renner arrive with targets. I only needed to adjust one parameter. Whoever is first wins twice. Whoever builds for scale from the start doesn't run later. While others improvise, you execute.</div>
+                </div>
+            </div>
+
+            <div class="article-card article">
+                <div class="article-header">
+                    <h3>Facilitating is more than managing: how I delivered the Instant Card</h3>
+                    <span class="article-toggle">▼</span>
+                </div>
+                <div class="article-content">
+                    <div class="article-full">When I started the Instant Card project, I had processor, manufacturer, engineering, compliance, credit, sales, and leadership all wanting different things at the same time. And they had urgency. A lot of urgency.<br><br>Disruptive innovation always has a political cost. It costs money to wait, costs opportunity to not launch fast, costs the chance of competitors arriving first. But the project was complex, required rigorous testing.<br><br>How do you deliver fast without falling into the trap of fast but broken?<br><br>I didn't rush. But I also didn't leave anyone waiting in the dark. Committees. Many committees. Every other week, all stakeholders in the same room. Each one saw what the other was doing, had clarity on where we were and why. I stayed close to the teams. Jira open, testing happening, problems being solved in real time.<br><br>We started with a pilot in 30 stores. We learned, adjusted, scaled. Until we reached 500 stores. No surprises. Because facilitation isn't saying yes to everything. It's telling the truth quickly and building together.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider divider-work"></div>
+
+    <!-- Como Trabalho (PT) -->
+    <section id="work" class="section pt-only">
+        <h2 class="section-title">Como eu trabalho</h2>
+        <div class="work-style">
+            <div class="work-item">
+                <h3>Onde brilho</h3>
+                <p>Discovery com múltiplos stakeholders. Transformo conflito de perspectivas em objetivos claros. <strong>Organização</strong> para estruturar o caos, <strong>empatia</strong> para entender cada visão, <strong>autonomia</strong> para tomar decisões quando perspectivas divergem. Fico na linha de contato entre áreas, evitando sustos.</p>
+            </div>
+            <div class="work-item">
+                <h3>Decidindo com o que tenho</h3>
+                <p>Raramente tenho 100% da informação. Mas vou atrás. Se não sei, pergunto pra quem sabe: colegas, dados, conhecimento coletivo. Decido com info incompleta porque o tempo de decisão também é um custo.</p>
+            </div>
+            <div class="work-item">
+                <h3>Sempre perto</h3>
+                <p>Muito hands-on. Jira aberto, testes de UX, sento com engenharia, participo de operações. Não peço permissão antes de ajudar, mas também entendo que às vezes times precisam de espaço para pensar.</p>
+            </div>
+            <div class="work-item">
+                <h3>Quando não concordamos</h3>
+                <p>Estruturo: cenário atual, cenário futuro, visão de cada área, ponto de chegada, estreitamos até consenso. <strong>Organização</strong> para manter a conversa estruturada, <strong>empatia</strong> para validar cada visão, <strong>autonomia</strong> para escalar com argumentos quando necessário.</p>
+            </div>
+            <div class="work-item">
+                <h3>O que não me motiva</h3>
+                <p>Trabalhos manuais, rotineiros, sem dinamismo. Quando não tenho liberdade de construção ou troca com outras áreas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How I Work (EN) -->
+    <section id="work" class="section en-only">
+        <h2 class="section-title">How I Work</h2>
+        <div class="work-style">
+            <div class="work-item">
+                <h3>Where I shine</h3>
+                <p>Discovery with multiple stakeholders. I transform conflicting perspectives into clear objectives. <strong>Organization</strong> to structure chaos, <strong>empathy</strong> to understand each view, <strong>autonomy</strong> to decide when perspectives diverge. I stay at the contact line between areas, preventing surprises.</p>
+            </div>
+            <div class="work-item">
+                <h3>Deciding with what I have</h3>
+                <p>I rarely have 100% of the information. But I go after it. If I don't know, I ask whoever does: colleagues, data, collective knowledge. I decide with incomplete info because the time it takes to decide is also a cost.</p>
+            </div>
+            <div class="work-item">
+                <h3>Always close</h3>
+                <p>Very hands-on. Jira open, UX testing, sitting with engineering, participating in operations. I don't ask permission before helping, but I also understand that sometimes teams need space to think.</p>
+            </div>
+            <div class="work-item">
+                <h3>When we disagree</h3>
+                <p>I structure: current scenario, future scenario, each area's view, each stakeholder's endpoint, narrow down to consensus. <strong>Organization</strong> to keep the conversation structured, <strong>empathy</strong> to validate each view, <strong>autonomy</strong> to escalate with arguments when needed.</p>
+            </div>
+            <div class="work-item">
+                <h3>What doesn't motivate me</h3>
+                <p>Manual work, routine tasks, no dynamism. When I don't have freedom to build or interact with other areas.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider divider-timeline"></div>
+
+    <!-- Timeline Section (PT) -->
+    <section id="timeline" class="section pt-only">
+        <h2 class="section-title">Trajetória profissional</h2>
+        
+        <div class="timeline-note">
+            <p><strong>Passe o mouse</strong> nos pontos para ver os detalhes de cada posição. <strong>13+ anos</strong> de experiência em cartões, pagamentos, operações e fintech.</p>
+        </div>
+
+        <div class="timeline-mobile-warning pt-only">
+            <p>💡 <strong>Dica:</strong> Para uma melhor visualização da timeline, vire seu celular para o modo paisagem (horizontal).</p>
+        </div>
+
+        <div class="timeline-container">
+            <div class="timeline-wrapper">
+                <div class="timeline-line"></div>
+                
+                <!-- 2013 HSBC Estagiária -->
+                <div class="timeline-item">
+                    <p class="timeline-year">2013</p>
+                    <div class="timeline-dot"></div>
+                    <p class="timeline-company">HSBC<br><span style="font-size: 0.75rem; font-weight: 500;">Estagiária de Operações</span></p>
+                    <div class="timeline-info">
+                        <p class="timeline-title">Estagiária de Operações</p>
+                        <p class="timeline-period">2013 • HSBC Brasil</p>
+                        <ul class="timeline-details" style="list-style: none; padding-left: 0;">
+                            <li>Operação de cartões de crédito, processamento de boletos e faturamento</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 2014-2015 HSBC Analista -->
+                <div class="timeline-item">
+                    <p class="timeline-year">2014-15</p>
+                    <div class="timeline-dot"></div>
+                    <p class="timeline-company">HSBC<br><span style="font-size: 0.75rem; font-weight: 500;">Analista de Operações</span></p>
+                    <div class="timeline-info">
+                        <p class="timeline-title">Analista de Operações</p>
+                        <p class="timeline-period">2014–2015 • HSBC Brasil</p>
+                        <ul class="timeline-details" style="list-style: none; padding-left: 0;">
+                            <li>Coordenação do grupo mensal de boas práticas em 6 países</li>
+                            <li>Transição operacional HSBC → Bradesco</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 2015-2018 Bradesco -->
+                <div class="timeline-item">
+                    <p class="timeline-year">2015-18</p>
+                    <div class="timeline-dot"></div>
+                    <p class="timeline-company">Bradesco<br><span style="font-size: 0.75rem; font-weight: 500;">Analista de Negócios TI</span></p>
+                    <div class="timeline-info">
+                        <p class="timeline-title">Analista de Negócios de TI</p>
+                        <p class="timeline-period">2015–2018 • Banco Bradesco</p>
+                        <ul class="timeline-details" style="list-style: none; padding-left: 0;">
+                            <li>Transição de sistemas pós-aquisição HSBC</li>
+                            <li>Ponte entre time técnico e diretoria</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 2018-2021 PO Realize/Renner -->
+                <div class="timeline-item">
+                    <p class="timeline-year">2018-21</p>
+                    <div class="timeline-dot"></div>
+                    <p class="timeline-company">Lojas Renner S.A.<br><span style="font-size: 0.75rem; font-weight: 500;">Product Owner</span></p>
+                    <div class="timeline-info">
+                        <p class="timeline-title">Product Owner – Operações</p>
+                        <p class="timeline-period">2018–2021 • Lojas Renner S.A. - Fintech Realize</p>
+                        <ul class="timeline-details" style="list-style: none; padding-left: 0;">
+                            <li>Gestão de 5 fornecedores e R$ 5M/mês em economia</li>
+                            <li>Qualidade e logística de cartões</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 2021-2024 PM Realize/Renner -->
+                <div class="timeline-item">
+                    <p class="timeline-year">2021-24</p>
+                    <div class="timeline-dot"></div>
+                    <p class="timeline-company">Lojas Renner S.A.<br><span style="font-size: 0.75rem; font-weight: 500;">Product Manager</span></p>
+                    <div class="timeline-info">
+                        <p class="timeline-title">Product Manager</p>
+                        <p class="timeline-period">2021–2024 • Lojas Renner S.A. - Fintech Realize</p>
+                        <ul class="timeline-details" style="list-style: none; padding-left: 0;">
+                            <li>Liderança em mais de 10 projetos</li>
+                            <li>Go-to-market e entregas operacionais</li>
+                            <li>Testes, validações e escalas nacionais</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 2024-2026 Senior PM Renner -->
+                <div class="timeline-item">
+                    <p class="timeline-year">2024-26</p>
+                    <div class="timeline-dot"></div>
+                    <p class="timeline-company">Lojas Renner S.A.<br><span style="font-size: 0.75rem; font-weight: 500;">Senior Product Manager</span></p>
+                    <div class="timeline-info">
+                        <p class="timeline-title">Senior Product Manager</p>
+                        <p class="timeline-period">2024–2026 • Lojas Renner S.A. - Fintech Realize</p>
+                        <ul class="timeline-details" style="list-style: none; padding-left: 0;">
+                            <li>Gerenciamento, atualizações e melhorias para os produtos: Cartão PL, Crédito, Empréstimos, Seguros, Open Finance</li>
+                            <li>Product Discovery e entregas ágeis</li>
+                            <li>Ponto de contato entre Negócios, Tech, Ops, Compliance</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section (EN) -->
+    <section id="timeline" class="section en-only">
+        <h2 class="section-title">Career Journey</h2>
+        
+        <div class="timeline-note">
+            <p><strong>Hover</strong> over the points to see details for each position. <strong>13+ years</strong> of experience in payments, cards, operations, and fintech.</p>
+        </div>
+
+        <div class="timeline-mobile-warning en-only">
+            <p>💡 <strong>Tip:</strong> For a better timeline view, rotate your phone to landscape mode (horizontal).</p>
+        </div>
+
+        <div class="timeline-container">
+            <div class="timeline-wrapper">
+                <div class="timeline-line"></div>
+                
+                <!-- 2013 HSBC Intern -->
+                <div class="timeline-item">
+                    <p class="timeline-year">2013</p>
+                    <div class="timeline-dot"></div>
+                    <p class="timeline-company">HSBC<br><span style="font-size: 0.75rem; font-weight: 500;">Operations Intern</span></p>
+                    <div class="timeline-info">
+                        <p class="timeline-title">Operations Intern</p>
+                        <p class="timeline-period">2013 • HSBC Brasil</p>
+                        <ul class="timeline-details" style="list-style: none; padding-left: 0;">
+                            <li>Credit card operations, payment processing, and billing</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 2014-2015 HSBC Analyst -->
+                <div class="timeline-item">
+                    <p class="timeline-year">2014-15</p>
+                    <div class="timeline-dot"></div>
+                    <p class="timeline-company">HSBC<br><span style="font-size: 0.75rem; font-weight: 500;">Operations Analyst</span></p>
+                    <div class="timeline-info">
+                        <p class="timeline-title">Operations Analyst</p>
+                        <p class="timeline-period">2014–2015 • HSBC Brasil</p>
+                        <ul class="timeline-details" style="list-style: none; padding-left: 0;">
+                            <li>Coordinated monthly best practices group across 6 countries</li>
+                            <li>HSBC to Bradesco operational transition</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 2015-2018 Bradesco -->
+                <div class="timeline-item">
+                    <p class="timeline-year">2015-18</p>
+                    <div class="timeline-dot"></div>
+                    <p class="timeline-company">Bradesco<br><span style="font-size: 0.75rem; font-weight: 500;">IT Business Analyst</span></p>
+                    <div class="timeline-info">
+                        <p class="timeline-title">IT Business Analyst</p>
+                        <p class="timeline-period">2015–2018 • Banco Bradesco</p>
+                        <ul class="timeline-details" style="list-style: none; padding-left: 0;">
+                            <li>Systems transition post-HSBC acquisition</li>
+                            <li>Bridge between tech team and leadership</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 2018-2021 PO Realize/Renner -->
+                <div class="timeline-item">
+                    <p class="timeline-year">2018-21</p>
+                    <div class="timeline-dot"></div>
+                    <p class="timeline-company">Lojas Renner S.A.<br><span style="font-size: 0.75rem; font-weight: 500;">Product Owner</span></p>
+                    <div class="timeline-info">
+                        <p class="timeline-title">Product Owner – Operations</p>
+                        <p class="timeline-period">2018–2021 • Lojas Renner S.A. - Fintech Realize</p>
+                        <ul class="timeline-details" style="list-style: none; padding-left: 0;">
+                            <li>Managed 5 suppliers and R$5M/month savings</li>
+                            <li>Card quality and logistics</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 2021-2024 PM Realize/Renner -->
+                <div class="timeline-item">
+                    <p class="timeline-year">2021-24</p>
+                    <div class="timeline-dot"></div>
+                    <p class="timeline-company">Lojas Renner S.A.<br><span style="font-size: 0.75rem; font-weight: 500;">Product Manager</span></p>
+                    <div class="timeline-info">
+                        <p class="timeline-title">Product Manager</p>
+                        <p class="timeline-period">2021–2024 • Lojas Renner S.A. - Fintech Realize</p>
+                        <ul class="timeline-details" style="list-style: none; padding-left: 0;">
+                            <li>Leadership in 10+ product projects</li>
+                            <li>Go-to-market and operational delivery</li>
+                            <li>Testing, validation, and national scale</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 2024-2026 Senior PM Renner -->
+                <div class="timeline-item">
+                    <p class="timeline-year">2024-26</p>
+                    <div class="timeline-dot"></div>
+                    <p class="timeline-company">Lojas Renner S.A.<br><span style="font-size: 0.75rem; font-weight: 500;">Senior Product Manager</span></p>
+                    <div class="timeline-info">
+                        <p class="timeline-title">Senior Product Manager</p>
+                        <p class="timeline-period">2024–2026 • Lojas Renner S.A. - Fintech Realize</p>
+                        <ul class="timeline-details" style="list-style: none; padding-left: 0;">
+                            <li>Management, updates, and improvements for products: Private Label Card, Credit, Loans, Insurance, Open Finance</li>
+                            <li>Product Discovery and agile delivery</li>
+                            <li>Contact point between Business, Tech, Ops, Compliance</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider divider-cv"></div>
+
+    <!-- CV Section -->
+    <section id="cv" class="section">
+        <h2 class="section-title pt-only">Currículo</h2>
+        <h2 class="section-title en-only">Resume</h2>
+        
+        <div class="cv-downloads">
+            <div class="cv-card pt-only">
+                <h3>Currículo em Português</h3>
+                <p>Acesse aqui meu currículo completo</p>
+                <a href="CV_MILENA_WERNER_PT.pdf" download class="cv-btn">📥 Download PDF</a>
+            </div>
+
+            <div class="cv-card">
+                <h3 class="pt-only">Currículo em Inglês</h3>
+                <h3 class="en-only">Resume in English</h3>
+                <p class="pt-only">Acesse aqui meu currículo completo</p>
+                <p class="en-only">Access my complete resume</p>
+                <a href="CV_MILENA_WERNER.pdf" download class="cv-btn">📥 Download PDF</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p class="pt-only">&copy; 2026 Milena Werner. Pronta para conversa.</p>
+        <p class="en-only">&copy; 2026 Milena Werner. Ready for a conversation.</p>
+    </footer>
+
+    <script>
+        function toggleLanguage() {
+            const body = document.body;
+            if (body.classList.contains('pt')) {
+                body.classList.remove('pt');
+                body.classList.add('en');
+                document.documentElement.lang = 'en';
+            } else {
+                body.classList.remove('en');
+                body.classList.add('pt');
+                document.documentElement.lang = 'pt-BR';
+            }
+        }
+
+        // Toggle articles on click
+        document.querySelectorAll('.article-card').forEach(article => {
+            article.addEventListener('click', function() {
+                this.classList.toggle('expanded');
+            });
+        });
+
+        // Timeline click to fix / hover behavior
+        document.querySelectorAll('.timeline-item').forEach(item => {
+            const infoBox = item.querySelector('.timeline-info');
+            
+            item.addEventListener('click', function(e) {
+                e.stopPropagation();
+                
+                // Remove fixed class from all other timeline-info boxes
+                document.querySelectorAll('.timeline-info.fixed').forEach(box => {
+                    if (box !== infoBox) {
+                        box.classList.remove('fixed');
+                    }
+                });
+                
+                // Toggle fixed class on current item
+                infoBox.classList.toggle('fixed');
+            });
+        });
+
+        // Close timeline info when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.timeline-item')) {
+                document.querySelectorAll('.timeline-info.fixed').forEach(box => {
+                    box.classList.remove('fixed');
+                });
+            }
+        });
+
+    </script>
+</body>
+</html>
