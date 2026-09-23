@@ -470,6 +470,10 @@
                 gap: 2rem;
             }
 
+            .hero-image {
+                order: -1;
+            }
+
             .hero-content h1 {
                 font-size: 1.6rem;
             }
@@ -674,6 +678,21 @@
             color: var(--dark-blue);
         }
 
+        .timeline-mobile-warning {
+            display: none;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #fff3cd;
+            border-radius: 8px;
+            border-left: 4px solid #ff9800;
+        }
+
+        .timeline-mobile-warning p {
+            font-size: 0.85rem;
+            color: #856404;
+            margin: 0;
+        }
+
         @media (max-width: 768px) {
             .timeline-wrapper {
                 grid-template-columns: repeat(3, 1fr);
@@ -722,6 +741,10 @@
 
             .timeline-info {
                 top: 6rem;
+            }
+
+            .timeline-mobile-warning {
+                display: block;
             }
         }
     </style>
@@ -1074,6 +1097,10 @@
             <p><strong>Passe o mouse</strong> nos pontos para ver os detalhes de cada posição. <strong>13+ anos</strong> de experiência em cartões, pagamentos, operações e fintech.</p>
         </div>
 
+        <div class="timeline-mobile-warning pt-only">
+            <p>💡 <strong>Dica:</strong> Para uma melhor visualização da timeline, vire seu celular para o modo paisagem (horizontal).</p>
+        </div>
+
         <div class="timeline-container">
             <div class="timeline-wrapper">
                 <div class="timeline-line"></div>
@@ -1178,6 +1205,10 @@
         
         <div class="timeline-note">
             <p><strong>Hover</strong> over the points to see details for each position. <strong>13+ years</strong> of experience in payments, cards, operations, and fintech.</p>
+        </div>
+
+        <div class="timeline-mobile-warning en-only">
+            <p>💡 <strong>Tip:</strong> For a better timeline view, rotate your phone to landscape mode (horizontal).</p>
         </div>
 
         <div class="timeline-container">
