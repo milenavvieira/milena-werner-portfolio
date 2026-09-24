@@ -132,7 +132,7 @@
         /* Hero Section */
         .hero {
             max-width: 1200px;
-            margin: 4rem auto 0;
+            margin: 2rem auto 0;
             padding: 3rem 2rem;
             display: grid;
             grid-template-columns: 2fr 1fr;
@@ -661,6 +661,10 @@
                 order: -1;
             }
 
+            .hero-content > .lang-toggle {
+                display: none;
+            }
+
             .hero-content h1 {
                 font-size: 1.6rem;
             }
@@ -1046,6 +1050,8 @@
                 <a href="#articles" class="en-only">Articles</a>
                 <a href="#work" class="pt-only">Como trabalho</a>
                 <a href="#work" class="en-only">How I work</a>
+                <a href="#competencies" class="pt-only">O que trago</a>
+                <a href="#competencies" class="en-only">What I bring</a>
                 <a href="#timeline" class="pt-only">Trajetória</a>
                 <a href="#timeline" class="en-only">Career</a>
                 <a href="#contato" class="pt-only">Contato</a>
@@ -1060,6 +1066,8 @@
     <!-- Hero Section -->
     <section class="hero" id="about">
         <div class="hero-content">
+            <button class="lang-toggle" onclick="toggleLanguage()" style="margin-bottom: 1.5rem;">EN / PT</button>
+            
             <p style="font-size: 0.85rem; color: #999; text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 1rem 0; font-weight: 600;" class="pt-only">Senior PM • Fintech & Cartões</p>
             <p style="font-size: 0.85rem; color: #999; text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 1rem 0; font-weight: 600;" class="en-only">Senior PM • Fintech & Cards</p>
             
@@ -1071,6 +1079,23 @@
             
             <p class="pt-only">Senior Product Manager com 12+ anos de experiência em cartões de crédito, pagamentos, seguros, empréstimos e Open Finance em grandes bancos e fintechs de varejo. Histórico prático na liderança de projetos digitais e gestão de produtos, desde a pesquisa com clientes e definição de estratégia até o lançamento e operações do dia a dia. Especializada em transformar regras do Banco Central, demandas de fornecedores e sistemas bancários em produtos simples, reduzindo custos operacionais.</p>
             <p class="en-only">Senior Product Manager with 12+ years of experience in credit cards, payments, loans, and open finance within major financial institutions and retail fintechs. Proven track record leading digital transformation projects and guiding teams through the full product lifecycle, from user research and strategy to launch and daily operations. Skilled in turning regulatory requirements, vendor demands, and core banking systems into simple financial products while reducing operational costs.</p>
+
+            <div style="margin: 1.5rem 0; font-size: 0.8rem; color: var(--text-light); line-height: 1.6;">
+                <p class="pt-only" style="margin: 0.5rem 0;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 0.5rem; vertical-align: middle;">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+                    </svg>
+                    Curitiba/PR - Brasil (UTC -3)
+                </p>
+                <p class="en-only" style="margin: 0.5rem 0;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; margin-right: 0.5rem; vertical-align: middle;">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+                    </svg>
+                    Curitiba/PR - Brazil (UTC -3)
+                </p>
+                <p class="pt-only" style="margin: 0.5rem 0;">Disponível para trabalhos híbrido e remoto - LATAM</p>
+                <p class="en-only" style="margin: 0.5rem 0;">Open to hybrid and remote work - LATAM</p>
+            </div>
 
             <div class="hero-buttons">
                 <a href="CV_MILENA_WERNER_PT.pdf" class="btn-primary pt-only">
@@ -1600,7 +1625,7 @@
 
     <!-- CV Section -->
     <!-- O que trago pra mesa Section -->
-    <section class="section">
+    <section class="section" id="competencies">
         <h2 class="section-title pt-only">O que trago pra mesa</h2>
         <h2 class="section-title en-only">What I bring to the table</h2>
         
