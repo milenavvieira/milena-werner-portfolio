@@ -23,6 +23,7 @@
 
         html {
             scroll-behavior: smooth;
+            scroll-padding-top: 120px;
         }
 
         body {
@@ -242,14 +243,15 @@
             text-decoration: none;
             font-weight: 500;
             font-size: 0.85rem;
-            transition: opacity 0.3s ease;
-            border: 1px solid var(--dark-blue);
-            background: transparent;
+            transition: all 0.3s ease;
+            border: 1px solid #e0e0e0;
+            background: var(--light-bg);
             color: var(--dark-blue);
         }
 
         .contact-btn-simple:hover {
-            opacity: 0.7;
+            background: #f0f0f0;
+            border-color: var(--accent);
         }
 
         .hero-image {
@@ -315,11 +317,17 @@
         }
 
         .section-title {
-            font-size: 1.8rem;
+            font-size: 2.5rem;
             margin-bottom: 2.5rem;
             color: var(--text-dark);
-            padding-bottom: 1rem;
-            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0;
+            border-bottom: none;
+            font-weight: 400;
+            letter-spacing: -0.5px;
+        }
+
+        #contato {
+            scroll-margin-top: -60px;
         }
 
         /* Articles */
@@ -467,6 +475,52 @@
             font-weight: 600;
         }
 
+        .competencies-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .competency-column {
+            background: var(--light-bg);
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 1rem;
+        }
+
+        .competency-column h3 {
+            font-size: 1rem;
+            color: var(--dark-blue);
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            margin-top: 0;
+            padding-bottom: 0;
+        }
+
+        .competency-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .competency-column li {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 0.4rem;
+            padding-left: 1rem;
+            position: relative;
+            line-height: 1.4;
+        }
+
+        .competency-column li::before {
+            content: "- ";
+            position: absolute;
+            left: 0;
+            color: var(--dark-blue);
+            font-weight: 600;
+        }
+
         /* CV Section */
         .cv-downloads {
             display: grid;
@@ -544,6 +598,10 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            html {
+                scroll-padding-top: 180px;
+            }
+
             header {
                 padding: 1.2rem 2rem;
             }
@@ -627,6 +685,11 @@
 
             .cv-downloads {
                 grid-template-columns: 1fr;
+            }
+
+            .competencies-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
             }
         }
 
@@ -1296,7 +1359,7 @@
 
     <!-- How I Work (EN) -->
     <section id="work" class="section en-only">
-        <h2 class="section-title">How I Work</h2>
+        <h2 class="section-title">How I work</h2>
         <div class="work-style">
             <div class="work-item">
                 <h3>Where I shine</h3>
@@ -1536,6 +1599,158 @@
     <div class="divider divider-cv"></div>
 
     <!-- CV Section -->
+    <!-- O que trago pra mesa Section -->
+    <section class="section">
+        <h2 class="section-title pt-only">O que trago pra mesa</h2>
+        <h2 class="section-title en-only">What I bring to the table</h2>
+        
+        <div class="competencies-grid">
+            <div class="competency-column">
+                <h3 class="pt-only">Produto e estratégia</h3>
+                <h3 class="en-only">Product and strategy</h3>
+                <ul>
+                    <li class="pt-only">Product Strategy</li>
+                    <li class="en-only">Product Strategy</li>
+                    <li class="pt-only">Discovery contínuo</li>
+                    <li class="en-only">Continuous discovery</li>
+                    <li class="pt-only">Roadmap e Priorização de backlog</li>
+                    <li class="en-only">Roadmap and Backlog Prioritization</li>
+                    <li class="pt-only">OKRs e métricas</li>
+                    <li class="en-only">OKRs and metrics</li>
+                    <li class="pt-only">User Stories</li>
+                    <li class="en-only">User Stories</li>
+                    <li class="pt-only">Critérios de aceite</li>
+                    <li class="en-only">Acceptance Criteria</li>
+                    <li class="pt-only">Proposta de valor</li>
+                    <li class="en-only">Value Proposition</li>
+                    <li class="pt-only">Product Operations</li>
+                    <li class="en-only">Product Operations</li>
+                </ul>
+            </div>
+            
+            <div class="competency-column">
+                <h3 class="pt-only">IA e tecnologia</h3>
+                <h3 class="en-only">AI and technology</h3>
+                <ul>
+                    <li class="pt-only">IA generativa</li>
+                    <li class="en-only">Generative AI</li>
+                    <li class="pt-only">Automação</li>
+                    <li class="en-only">Automation</li>
+                    <li class="pt-only">Prototipação com IA</li>
+                    <li class="en-only">AI Prototyping</li>
+                    <li class="pt-only">Claude</li>
+                    <li class="en-only">Claude</li>
+                    <li class="pt-only">ChatGPT</li>
+                    <li class="en-only">ChatGPT</li>
+                    <li class="pt-only">Gemini</li>
+                    <li class="en-only">Gemini</li>
+                    <li class="pt-only">NotebookLM</li>
+                    <li class="en-only">NotebookLM</li>
+                    <li class="pt-only">APIs e integrações</li>
+                    <li class="en-only">APIs and integrations</li>
+                    <li class="pt-only">Arquitetura de produtos digitais</li>
+                    <li class="en-only">Digital product architecture</li>
+                </ul>
+            </div>
+            
+            <div class="competency-column">
+                <h3 class="pt-only">Métodos</h3>
+                <h3 class="en-only">Methods</h3>
+                <ul>
+                    <li class="pt-only">Scrum</li>
+                    <li class="en-only">Scrum</li>
+                    <li class="pt-only">Kanban</li>
+                    <li class="en-only">Kanban</li>
+                    <li class="pt-only">Design Thinking</li>
+                    <li class="en-only">Design Thinking</li>
+                    <li class="pt-only">RICE</li>
+                    <li class="en-only">RICE</li>
+                    <li class="pt-only">Impacto vs. esforço</li>
+                    <li class="en-only">Impact vs. Effort</li>
+                    <li class="pt-only">Testes A/B</li>
+                    <li class="en-only">A/B Testing</li>
+                    <li class="pt-only">UX Research</li>
+                    <li class="en-only">UX Research</li>
+                </ul>
+            </div>
+            
+            <div class="competency-column">
+                <h3 class="pt-only">Fintech e regulação</h3>
+                <h3 class="en-only">Fintech and regulation</h3>
+                <ul>
+                    <li class="pt-only">Compliance e Regulação</li>
+                    <li class="en-only">Compliance and Regulation</li>
+                    <li class="pt-only">Mandates e Regras de Bandeiras</li>
+                    <li class="en-only">Mandates and Card Scheme Rules</li>
+                    <li class="pt-only">Estruturas de BIN</li>
+                    <li class="en-only">BIN Structures</li>
+                    <li class="pt-only">Wallets</li>
+                    <li class="en-only">Wallets</li>
+                    <li class="pt-only">Open Finance</li>
+                    <li class="en-only">Open Finance</li>
+                    <li class="pt-only">Pagamentos digitais</li>
+                    <li class="en-only">Digital Payments</li>
+                    <li class="pt-only">Integrações bancárias</li>
+                    <li class="en-only">Banking Integrations</li>
+                </ul>
+            </div>
+            
+            <div class="competency-column">
+                <h3 class="pt-only">Operações e gestão</h3>
+                <h3 class="en-only">Operations and management</h3>
+                <ul>
+                    <li class="pt-only">Gestão de fornecedores</li>
+                    <li class="en-only">Vendor Management</li>
+                    <li class="pt-only">Otimização de processos operacionais</li>
+                    <li class="en-only">Operational Process Optimization</li>
+                    <li class="pt-only">Análise de requisitos técnicos</li>
+                    <li class="en-only">Technical Requirements Analysis</li>
+                    <li class="pt-only">Documentação de processos</li>
+                    <li class="en-only">Process Documentation</li>
+                    <li class="pt-only">Implementação de mudanças</li>
+                    <li class="en-only">Change Implementation</li>
+                    <li class="pt-only">Liderança de equipes multidisciplinares</li>
+                    <li class="en-only">Multidisciplinary Team Leadership</li>
+                    <li class="pt-only">Planejamento operacional</li>
+                    <li class="en-only">Operational Planning</li>
+                    <li class="pt-only">Gestão de stakeholders</li>
+                    <li class="en-only">Stakeholder Management</li>
+                    <li class="pt-only">Cross-functional leadership</li>
+                    <li class="en-only">Cross-functional Leadership</li>
+                </ul>
+            </div>
+            
+            <div class="competency-column">
+                <h3 class="pt-only">Soft Skills</h3>
+                <h3 class="en-only">Soft Skills</h3>
+                <ul>
+                    <li class="pt-only">Organização e Estrutura</li>
+                    <li class="en-only">Organization and Structure</li>
+                    <li class="pt-only">Empatia e Escuta</li>
+                    <li class="en-only">Empathy and Listening</li>
+                    <li class="pt-only">Autonomia e Decisão</li>
+                    <li class="en-only">Autonomy and Decision-making</li>
+                    <li class="pt-only">Comunicação clara</li>
+                    <li class="en-only">Clear Communication</li>
+                    <li class="pt-only">Pensamento crítico</li>
+                    <li class="en-only">Critical Thinking</li>
+                    <li class="pt-only">Resiliência e adaptabilidade</li>
+                    <li class="en-only">Resilience and Adaptability</li>
+                    <li class="pt-only">Foco em resultado</li>
+                    <li class="en-only">Results-focused</li>
+                    <li class="pt-only">Mentoria e desenvolvimento de pessoas</li>
+                    <li class="en-only">Mentoring and People Development</li>
+                    <li class="pt-only">Proatividade</li>
+                    <li class="en-only">Proactivity</li>
+                    <li class="pt-only">Visão holística e sistêmica</li>
+                    <li class="en-only">Holistic and Systemic Vision</li>
+                    <li class="pt-only">Inteligência emocional</li>
+                    <li class="en-only">Emotional Intelligence</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
     <!-- Contato Section -->
     <section id="contato" class="section">
         <h2 class="section-title pt-only">Contato</h2>
@@ -1581,7 +1796,7 @@
             <div class="cv-card pt-only">
                 <h3>Currículo em Português</h3>
                 <p>Acesse aqui meu currículo completo</p>
-                <a href="CV_MILENA_WERNER_PT.pdf" download class="cv-btn">📥 Download PDF</a>
+                <a href="CV_MILENA_WERNER_PT.pdf" download class="cv-btn">Download PDF</a>
             </div>
 
             <div class="cv-card">
@@ -1589,7 +1804,7 @@
                 <h3 class="en-only">Resume in English</h3>
                 <p class="pt-only">Acesse aqui meu currículo completo</p>
                 <p class="en-only">Access my complete resume</p>
-                <a href="CV_MILENA_WERNER.pdf" download class="cv-btn">📥 Download PDF</a>
+                <a href="CV_MILENA_WERNER.pdf" download class="cv-btn">Download PDF</a>
             </div>
         </div>
     </section>
